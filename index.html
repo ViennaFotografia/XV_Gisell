@@ -574,7 +574,7 @@
                         </defs>
     
                         <!-- Los textos -->
-                        <text x="400" y="200" class="texto-xv animate-on-scroll">Mis XV</text>
+                        <text x="400" y="200" class="texto-xv">Mis XV</text>
                         <text x="400" y="350" class="texto-xv">Años</text>
                     </svg>
                 </div>
@@ -815,15 +815,16 @@
             }
         }, 1000);
 
+        const lada = "52"; // LADA de México
+        const numeroConfirmacion = "6645336188"; 
+
         // 2. Lógica de Envío de Mensaje (Buzón)
-        function enviarMensajeWApp(lada, numero) {
+        function enviarMensajeWApp() {
             var mensaje = document.getElementById('mensajeInput').value;
             if(!mensaje) return alert("Por favor escribe un mensaje primero.");
-            var url = "https://api.whatsapp.com/send?phone=" + lada + numero + "&text=" + encodeURIComponent(mensaje);
+            var url = "https://api.whatsapp.com/send?phone=" + lada + numeroConfirmacion + "&text=" + encodeURIComponent(mensaje);
             window.open(url, '_blank');
         }
-
-        const numeroConfirmacion = "6194514811"; 
 
         function confirmarAsistencia(event) {
             event.preventDefault();
@@ -831,10 +832,10 @@
             var asistire = document.getElementById("asistire").checked;
 
             var mensajeCA = asistire 
-                ? `Hola, soy ${nombre} y confirmo mi asistencia a los XV años de Gissele.` 
-                : `Hola, soy ${nombre} y lamentablemente, no podré asistir a los XV años de Gissele.`;
+                ? `Hola, soy ${nombre} y confirmo mi asistencia a los XV años de Gisell.` 
+                : `Hola, soy ${nombre} y lamentablemente, no podré asistir a los XV años de Gisell.`;
 
-            var urlCA = "https://api.whatsapp.com/send?phone=1" + numeroConfirmacion + "&text=" + encodeURIComponent(mensajeCA);
+            var urlCA = "https://api.whatsapp.com/send?phone=" + lada + numeroConfirmacion + "&text=" + encodeURIComponent(mensajeCA);
             window.open(urlCA, '_blank').focus();
             
             return false;
