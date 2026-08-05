@@ -25,7 +25,7 @@
             
             /* Colores de Fondo y Estructura */
             --color-fondo-pantalla: #EDF1F4; /* Gris azulado ultra claro para no cansar la vista */
-            --color-fondo-tarjeta: rgba(255, 255, 255, 0.95); /* Blanco nieve translúcido */
+            --color-fondo-tarjeta: #ede8e4eb/*rgba(255, 255, 255, 0.95)*/; /* Blanco nieve translúcido */
             --color-cubierta: #FFFFFF; /* Blanco puro para la animación de entrada */
             
             /* Colores de Texto y Botones */
@@ -145,6 +145,7 @@
             background-position: center;
             padding: 20px 0;
             margin: 25px -20px; 
+            filter: sepia(0.5) hue-rotate(180deg) saturate(1.3) brightness(1); /* Aplica un filtro para darle un tono azulado */
         }
 
         p, label, input, .texto {
@@ -552,11 +553,11 @@
                         <defs>
                             <!-- Gradiente super brillante (Efecto metálico plateado teñido sutilmente) -->
                             <linearGradient id="superPlateado" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="#B0B0B0" />    
-                                <stop offset="30%" stop-color="#FAFAFA" />   
-                                <stop offset="50%" stop-color="#8A9AA6" /> <!-- Reflejo empatado con el vestido (oscurecido) -->
-                                <stop offset="75%" stop-color="#DCDCDC" />   
-                                <stop offset="100%" stop-color="#40505E" /> <!-- Base acento oscuro (un poco más profunda) -->
+                                <stop offset="0%" stop-color="#A4BBD0" /> <!-- Azul claro brillante -->
+                                <stop offset="30%" stop-color="#F0F8FF" /> <!-- Blanco casi puro para el brillo máximo -->
+                                <stop offset="50%" stop-color="#6A8EAE" /> <!-- Tono azul medio, más saturado -->
+                                <stop offset="75%" stop-color="#C0D4E5" /> <!-- Reflejo azulado claro -->
+                                <stop offset="100%" stop-color="#3A506B" /> <!-- Base azul oscura y profunda -->
                             </linearGradient>
     
                             <!-- Borde plateado sincronizado con el azul pizarra -->
@@ -609,7 +610,7 @@
             <section>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%">
                         <!-- Los textos -->
-                        <text x="400" y="200" class="texto-1">Con la bendicion</text>
+                        <text x="400" y="200" class="texto-1">Con la bendición</text>
                         <text x="400" y="350" class="texto-1">de mis papás</text>
                     </svg>
                 <img class="separador-decorativo animate-on-scroll" src="1_separador.webp" alt="separador">
@@ -691,7 +692,7 @@
                 </div>
                 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%">
-                    <text x="400" y="150" class="texto-2">Codigo de Vestimenta</text>
+                    <text x="400" y="150" class="texto-2">Código de Vestimenta</text>
                 </svg>
                 <div class="itinerario-item animate-on-scroll" style="flex-direction: column;">
                     <div class="itinerario-icono" style="margin-bottom: 10px;"><img src="vestimenta.webp" alt="Icono de Vestimenta"></div>
