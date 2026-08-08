@@ -13,25 +13,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     
     <style>
-        /* Variables y Estilos Generales - PALETA AZUL POLVO Y PLATA */
+        /* Variables y Estilos Generales - PALETA CAFÉ Y AZUL CLARO */
         :root {
             /* Colores Protagonistas */
-            --color-vestido: #B5C7D3; /* Azul Polvo / Glaciar (El color de la quinceañera) */
-            --color-plata: #9E9E9E; /* Plateado Metálico OSCURECIDO para destellos y títulos */
+            --color-vestido: #C3E2FF; /* Azul Claro (Usado en detalles, botones, contador) */
+            --color-plata: #E0E0E0; /* Plateado aclarado para resaltar sobre el fondo oscuro */
             
             /* Colores de Acento y Contraste */
-            --color-acento-oscuro: #4A5D6E; /* Azul Pizarra Oscuro (Excelente para lectura y elegancia) */
-            --color-acento-claro: #D9E4EC; /* Un tono más luminoso derivado del vestido */
+            --color-acento-oscuro: #2A3B47; /* Texto oscuro (para números del contador y textos sobre botones) */
+            --color-acento-claro: #F5F5F5;
             
             /* Colores de Fondo y Estructura */
-            --color-fondo-pantalla: #EDF1F4; /* Gris azulado ultra claro para no cansar la vista */
-            --color-fondo-tarjeta: #ede8e4eb/*rgba(255, 255, 255, 0.95)*/; /* Blanco nieve translúcido */
-            --color-cubierta: #FFFFFF; /* Blanco puro para la animación de entrada */
+            --color-fondo-pantalla: #EDF1F4; /* Fondo exterior */
+            --color-fondo-tarjeta: #A0775B; /* CAFÉ: Fondo principal de la invitación */
+            --color-cubierta: #A0775B; /* Animación de entrada con el mismo color café */
             
             /* Colores de Texto y Botones */
-            --color-texto-principal: #33414C; /* Gris carbón con subtono azul para el texto general */
+            --color-texto-principal: #FFFFFF; /* Texto general en blanco para máxima legibilidad */
             --color-fondo-botones: var(--color-vestido);
-            --color-texto-botones: #2A3B47; /* Texto oscuro sobre el botón azul para legibilidad perfecta */
+            --color-texto-botones: #2A3B47; /* Texto oscuro sobre el botón azul claro */
             
             /* Tipografías */
             --fuente-titulos: 'Carattere', cursive;
@@ -49,7 +49,7 @@
 
         /* Contenedor para la imagen de fondo */
         .background-container {
-            background-image: url('fondo.jpg');
+            background-image: url('fondo.png');
             background-size: 100% auto; 
             background-position: top center; 
             padding: 20px; 
@@ -62,9 +62,9 @@
             margin: 0 auto;
             background: var(--color-fondo-tarjeta);
             border-radius: 20px; 
-            box-shadow: 0 0 30px rgba(74, 93, 110, 0.15); /* Sombra teñida con el color de acento */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra adaptada para resaltar la tarjeta café */
             position: relative;
-            overflow-x:hidden;
+            overflow-x: hidden;
             overflow-y: hidden;
         }
 
@@ -108,19 +108,17 @@
 
         h1, h2, h3 {
             font-family: var(--fuente-titulos);
-            color: var(--color-plata);
             font-weight: normal;
-            text-shadow: 0.5px 0 0.3px #000, -1px 0 1px #000, 0 1px 1px #000, 0 -1px 1px #000; 
         }
 
-        h1 { font-size: 4rem; margin: 10px 0; }
-        h2 { font-size: 3rem; margin-bottom: 15px; color: var(--color-acento-oscuro); text-shadow: none; }
-        h3 { font-size: 2.5rem; letter-spacing: 4px; }
+        h1 { font-size: 4rem; margin: 10px 0; color: var(--color-plata); }
+        h2 { font-size: 3rem; margin-bottom: 15px; color: var(--color-vestido); text-shadow: none; }
+        h3 { font-size: 2.5rem; letter-spacing: 4px; color: #FFFFFF; }
 
         .person-name {
             font-family: var(--fuente-nombres);
             font-size: 1.5rem;
-            color: var(--color-acento-oscuro);
+            color: #FFFFFF;
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -129,14 +127,15 @@
         .nombres-familiares {
             font-family: var(--fuente-nombres);
             font-size: 2rem; 
-            color: var(--color-acento-oscuro);
+            color: #FFFFFF;
             line-height: 1.5;
-            text-shadow: 1px 1px 3px rgba(74, 93, 110, 0.15); 
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); 
         }
 
         .fuente-padres {
             --fuente-nombres: 'Pinyon Script', cursive; 
             font-size: 3rem;
+            color: var(--color-vestido);
         }
 
         .name-band-container {
@@ -145,10 +144,10 @@
             background-position: center;
             padding: 20px 0;
             margin: 25px -20px; 
-            filter: sepia(0.5) hue-rotate(180deg) saturate(1.3) brightness(1); /* Aplica un filtro para darle un tono azulado */
+            filter: sepia(0.5) hue-rotate(180deg) saturate(1.3) brightness(1); 
         }
 
-        p, label, input, .texto {
+        p, label, .texto {
             font-size: 1.5rem;
             line-height: 1.6;
             color: var(--color-texto-principal);
@@ -158,18 +157,18 @@
             width: calc(100% + 30px); 
             height: auto;
             margin: -10px -20px 15px -20px; 
-            filter: grayscale(100%) brightness(1.2);
+            filter: grayscale(100%) brightness(1.6); /* Más brillante para que destaque en el café */
         }
 
         /* Imágenes */
         .foto-principal {
             width: 75%;
             border-radius: 50%;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
             margin: 20px 0;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-            border: 2px solid var(--color-plata);
+            border: 2px solid var(--color-vestido);
         }
 
         .foto-container {
@@ -203,13 +202,13 @@
             cursor: pointer;
             border: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(74, 93, 110, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             font-weight: bold;
         }
         .button:hover { 
             opacity: 0.9; 
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(74, 93, 110, 0.3);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         /* Contador */
@@ -221,40 +220,40 @@
             padding: 0 10px; 
         }
         .segment {
-            background: var(--color-vestido); /* Modificado al color del vestido */
-            color: var(--color-texto-principal);
+            background: var(--color-vestido); 
             padding: 15px 10px;
             border-radius: 10px;
             min-width: 60px;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--color-acento-claro);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
         .segment .number { 
             font-size: 1.8rem; 
             font-weight: bold; 
             font-family: var(--fuente-nombres); 
-            color: var(--color-acento-oscuro); /* Contraste para que destaquen los números */
+            color: var(--color-acento-oscuro); 
         }
         .segment .unit { 
             font-size: 0.9rem; 
             text-transform: uppercase; 
             margin-top: 5px; 
-            color: var(--color-texto-principal); /* Contraste para el texto */
+            color: var(--color-acento-oscuro); 
+            font-weight: bold;
         }
 
         /* Formularios y Cajas de texto */
         textarea, input[type="text"] {
             width: 90%;
             padding: 10px;
-            border: 1px solid var(--color-vestido);
+            border: 2px solid var(--color-vestido);
             border-radius: 8px;
             font-family: var(--fuente-texto);
             font-size: 1.1rem;
             margin-top: 10px;
-            background-color: var(--color-fondo-pantalla);
-            color: var(--color-texto-principal);
+            background-color: rgba(255, 255, 255, 0.95); /* Blanco para que se pueda leer lo que se escribe */
+            color: #2A3B47;
         }
         textarea { height: 100px; resize: none; }
         
@@ -283,6 +282,7 @@
             cursor: pointer;
             font-size: 1.2rem;
             line-height: 1.6;
+            color: #FFFFFF;
         }
 
         .radio-label::before {
@@ -293,9 +293,9 @@
             transform: translateY(-50%);
             width: 22px;
             height: 22px;
-            border: 2px solid var(--color-acento-oscuro);
+            border: 2px solid var(--color-vestido);
             border-radius: 50%;
-            background-color: var(--color-cubierta);
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         input[type="radio"]:checked + .radio-label::after {
@@ -307,7 +307,7 @@
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background-color: var(--color-acento-oscuro);
+            background-color: var(--color-vestido);
         }
 
         /* Botón de Audio Flotante */
@@ -319,12 +319,12 @@
         }
         #toggleButton {
             background: var(--color-vestido);
-            border: 2px solid var(--color-acento-oscuro);
+            border: 2px solid #FFFFFF;
             border-radius: 50%;
             width: 50px;
             height: 50px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             color: var(--color-texto-botones);
             font-size: 1.5rem;
             display: flex;
@@ -346,15 +346,15 @@
         .lugar-link img {
             width: 100%;
             border-radius: 10px;
-            filter: brightness(0.85); 
+            filter: brightness(0.9); 
             margin-bottom: 15px;
-            border: 2px solid var(--color-acento-claro);
+            border: 2px solid var(--color-vestido);
         }
         .lugar-link .nombre-lugar {
             font-family: var(--fuente-nombres);
             font-size: 1.8rem;
             margin: 0;
-            color: var(--color-acento-oscuro);
+            color: var(--color-vestido);
         }
         .lugar-link .direccion-lugar, .lugar-link .hora-lugar {
             font-family: var(--fuente-texto);
@@ -363,8 +363,8 @@
         .lugar-link .hora-lugar {
             font-weight: bold;
             font-size: 1.3rem;
-            color: var(--color-texto-principal);
-            background: var(--color-fondo-pantalla);
+            color: var(--color-texto-botones);
+            background: var(--color-vestido);
             display: inline-block;
             padding: 5px 15px;
             border-radius: 15px;
@@ -408,15 +408,15 @@
         .play-button {
             width: 100px;
             height: 100px;
-            background-color: var(--color-acento-oscuro); 
+            background-color: var(--color-vestido); 
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            border: 4px solid var(--color-vestido); 
+            border: 4px solid rgba(255,255,255,0.8); 
             transition: transform 0.3s ease;
-            box-shadow: 0 0 20px rgba(181, 199, 211, 0.5);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
         }
 
         .play-button:hover { transform: scale(1.1); }
@@ -426,7 +426,7 @@
             height: 0;
             border-top: 22px solid transparent;
             border-bottom: 22px solid transparent;
-            border-left: 36px solid var(--color-cubierta); 
+            border-left: 36px solid var(--color-cubierta); /* Triángulo color café */
             margin-left: 8px;
         }
 
@@ -461,7 +461,7 @@
             transform: translateX(0);
         }
 
-        /* --- NUEVOS ESTILOS DEL ITINERARIO SEPARADO EN 2 COLUMNAS --- */
+        /* --- NUEVOS ESTILOS DEL ITINERARIO --- */
         .itinerario-container {
             position: relative;
             padding: 20px 0;
@@ -476,6 +476,7 @@
             object-fit: cover;
             object-position: center;
             z-index: 1;
+            filter: brightness(0) saturate(100%) invert(88%) sepia(21%) saturate(2037%) hue-rotate(178deg) brightness(105%) contrast(99%); /* Color #C0E2FE */
         }
 
         .itinerario-item {
@@ -487,15 +488,8 @@
             z-index: 2;
         }
         
-        /* Ítems impares (Recepción, Vals): Texto Izquierda, Imagen Derecha */
-        .itinerario-item:nth-of-type(odd) {
-            flex-direction: row;
-        }
-        
-        /* Ítems pares (Cena, Fin): Imagen Izquierda, Texto Derecha */
-        .itinerario-item:nth-of-type(even) {
-            flex-direction: row-reverse;
-        }
+        .itinerario-item:nth-of-type(odd) { flex-direction: row; }
+        .itinerario-item:nth-of-type(even) { flex-direction: row-reverse; }
         
         .itinerario-texto, .itinerario-icono-wrapper {
             width: 50%;
@@ -503,7 +497,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center; /* Asegura el alineado al centro del texto */
+            text-align: center; 
             padding: 0 10px;
             box-sizing: border-box;
         }
@@ -511,24 +505,24 @@
         .itinerario-titulo {
             font-family: var(--fuente-nombres);
             font-size: 1.4rem;
-            color: var(--color-acento-oscuro);
+            color: var(--color-vestido);
             margin-bottom: 5px;
         }
         .itinerario-hora {
             font-size: 1.2rem;
-            color: var(--color-texto-principal);
+            color: #FFFFFF;
         }
 
         .itinerario-icono {
             width: 60px; 
             height: 60px;
-            background-color: var(--color-fondo-pantalla); 
+            background-color: rgba(255, 255, 255, 0.95); 
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid var(--color-vestido);
-            box-shadow: inset 0 0 10px rgba(181, 199, 211, 0.3);
+            border: 2px solid var(--color-vestido);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
         .itinerario-icono img {
             width: 65%; 
@@ -536,7 +530,7 @@
         }
         /* --- FIN ESTILOS ITINERARIO --- */
 
-        /* Ajustes SVG para armonizar con el azul polvo y acento oscuro */
+        /* Ajustes SVG para armonizar con los nuevos colores */
         .texto-xv {
             font-family: 'Great Vibes', cursive, sans-serif;
             font-size: 180px;
@@ -602,25 +596,25 @@
                     <!-- Título con SVG -->
                     <svg class="animate-on-scroll"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%">
                         <defs>
-                            <!-- Gradiente super brillante (Efecto metálico plateado teñido sutilmente) -->
+                            <!-- Gradiente super brillante -->
                             <linearGradient id="superPlateado" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" stop-color="#A4BBD0" /> <!-- Azul claro brillante -->
-                                <stop offset="30%" stop-color="#F0F8FF" /> <!-- Blanco casi puro para el brillo máximo -->
-                                <stop offset="50%" stop-color="#6A8EAE" /> <!-- Tono azul medio, más saturado -->
-                                <stop offset="75%" stop-color="#C0D4E5" /> <!-- Reflejo azulado claro -->
-                                <stop offset="100%" stop-color="#3A506B" /> <!-- Base azul oscura y profunda -->
+                                <stop offset="0%" stop-color="#FFFFFF" /> 
+                                <stop offset="30%" stop-color="#F0F8FF" /> 
+                                <stop offset="50%" stop-color="#C3E2FF" /> <!-- Se incorpora el tono azul claro -->
+                                <stop offset="75%" stop-color="#FFFFFF" /> 
+                                <stop offset="100%" stop-color="#C3E2FF" /> 
                             </linearGradient>
     
-                            <!-- Borde plateado sincronizado con el azul pizarra -->
+                            <!-- Borde plateado sincronizado con el azul claro -->
                             <linearGradient id="bordePlateado" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#4A5D6E" />
+                                <stop offset="0%" stop-color="#C3E2FF" />
                                 <stop offset="50%" stop-color="#FFFFFF" />
-                                <stop offset="100%" stop-color="#4A5D6E" />
+                                <stop offset="100%" stop-color="#C3E2FF" />
                             </linearGradient>
     
-                            <!-- Sombra para que despegue del fondo -->
+                            <!-- Sombra para que despegue del fondo café -->
                             <filter id="sombraBrillante" x="-20%" y="-20%" width="140%" height="140%">
-                                <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.4"/>
+                                <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
                             </filter>
                         </defs>
     
@@ -646,7 +640,7 @@
                         <text x="400" y="150" class="texto-1">Gisell</text>
                     </svg>
                 </div>
-                <h3 class="animate-on-scroll" style="margin-top: 0; color: var(--color-acento-oscuro);">12 . SEP . 2026</h3>
+                <h3 class="animate-on-scroll" style="margin-top: 0;">12 . SEP . 2026</h3>
                 
                 <!-- Contador -->
                 <div class="countdown-container animate-on-scroll">
@@ -784,8 +778,8 @@
                 </svg>
                 <div class="itinerario-item animate-on-scroll" style="flex-direction: column;">
                     <div class="itinerario-icono" style="margin-bottom: 10px;"><img src="vestimenta.webp" alt="Icono de Vestimenta"></div>
-                    <h2 class="person-name">Formal</h2>
-                    <p class="texto">El color <strong>Azul</strong> queda reservado.</p>
+                    <h2 class="person-name" style="margin-top:10px;">Formal</h2>
+                    <p class="texto">El color <strong style="color:var(--color-vestido);">Azul</strong> queda reservado.</p>
                     <p class="texto">Se recomienda llevar Botas y Sombrero.</p>
                 </div>
             </section>
@@ -809,12 +803,12 @@
                 <p class="texto">Es la tradición de regalar dinero en efectivo dentro de un sobre.</p>
 
                 <svg class="animate-on-scroll"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%">
-                    <text x="400" y="150" class="texto-2">Buzon de deseos</text>
+                    <text x="400" y="150" class="texto-2">Buzón de deseos</text>
                 </svg>
                 <p class="texto">Si quieres dejarme un lindo mensaje por mis XV, puedes hacerlo aquí:</p>
                 <textarea id="mensajeInput" placeholder="Escribe tu mensaje aquí..."></textarea>
                 <!-- REEMPLAZA ESTOS NÚMEROS (LADA y NÚMERO) POR TU NÚMERO DE WHATSAPP -->
-                <button class="button" onclick="enviarMensajeWApp('1', '6194514811')">Enviar por WhatsApp</button>
+                <button class="button" onclick="enviarMensajeWApp()">Enviar por WhatsApp</button>
             </section>
 
             <!-- Flores decorativas laterales -->
@@ -857,7 +851,7 @@
                 </svg>
                 <p style="font-size: 3rem; margin: 0;">📸</p>
                 <p class="texto">Sube tus fotos y comparte tus mejores recuerdos de este momento único. ¡Estamos emocionados de ver tus fotos!</p>
-                <img src="qr-code.png" alt="Código QR para Google Fotos" style="width: 180px; border-radius: 15px; margin-top: 15px; border: 2px solid var(--color-plata); box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                <img src="qr-code.png" alt="Código QR para Google Fotos" style="width: 180px; border-radius: 15px; margin-top: 15px; border: 3px solid var(--color-vestido); box-shadow: 0 4px 10px rgba(0,0,0,0.3); background-color: #FFFFFF;">
                 <br>
                 <a href="https://drive.google.com/drive/folders/1DvQxTb-dlBEON-urZAvI3J3dgQV0FTpe?usp=sharing" target="_blank" class="button" style="margin-top: 25px;">Ver Fotos</a>
             </section>
