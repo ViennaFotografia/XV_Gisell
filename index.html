@@ -567,6 +567,53 @@
             filter: url(#sombraBrillante);
             text-anchor: middle;
         }
+
+         /* Contenedor para la galería y las cintas */
+        .gallery-wrapper {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        /* Cuadrícula de fotos */
+        .grid-gallery {
+            display: grid;
+            gap: 10px;
+        }
+        .grid-3-cols {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .grid-2-cols {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-1-cols {
+            grid-template-columns: 1fr;
+        }
+
+        .grid-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        /* Cintas decorativas para la galería */
+        .gallery-corner {
+            position: absolute;
+            width: 60px; /* Ajusta el tamaño según necesites */
+            height: auto;
+            z-index: 5; /* Por debajo de las flores principales pero encima de la galería */
+            pointer-events: none; /* Para que no interfiera con clics */
+        }
+        .gallery-top-left {
+            top: -20px;
+            left: -20px;
+        }
+        .gallery-top-right {
+            top: -20px;
+            right: -20px;
+        }
     </style>
 </head>
 <body>
@@ -626,7 +673,7 @@
                           
                 <!-- Contenedor para la foto y el marco -->
                 <div class="foto-container animate-on-scroll">
-                    <img class="foto-principal" src="foto_principal.jpeg" alt="Foto de Gisell">
+                    <img class="foto-principal" src="foto_principal.jpg" alt="Foto de Gisell">
                     <img class="marco-gif" src="aro-brillo.gif" alt="Marco brillante">
                 </div>
                 
@@ -784,6 +831,46 @@
                 </div>
             </section>
 
+            <!-- Flores decorativas laterales -->
+            <div class="side-flower-container">
+                <img src="flor2.png" alt="Decoración floral" class="animate-slide-in-left" style="width: 70px;">
+                <img src="flor2.png" alt="Decoración floral" class="animate-slide-in-right" style="width: 70px;">
+            </div>
+            
+            <section>
+                <h2 class="animate-on-scroll">Mis Momentos</h2>
+                <!-- Bloque 1: 3 columnas -->
+                <div class="gallery-wrapper">
+                    <img src="v3.webp" alt="Decoración" class="gallery-corner gallery-top-left">
+                    <img src="v4.webp" alt="Decoración" class="gallery-corner gallery-top-right">
+                    <div class="grid-gallery grid-2-cols">
+                        <img src="fotos/1.jpg" alt="Galeria 1" class="animate-slide-in-left">
+                        <img src="fotos/2.jpg" alt="Galeria 2" class="animate-slide-in-left">
+                        <img src="fotos/3.jpg" alt="Galeria 3" class="animate-slide-in-right">
+                        <img src="fotos/4.jpg" alt="Galeria 4" class="animate-slide-in-right">
+                    </div>
+                </div>
+                <!-- Bloque 2: 1 columnas -->
+                <div class="gallery-wrapper ">
+                    <img src="v3.webp" alt="Decoración" class="gallery-corner gallery-top-left">
+                    <img src="v4.webp" alt="Decoración" class="gallery-corner gallery-top-right">
+                    <div class="grid-1-cols grid-gallery" style="height: 100%;">
+                        <img src="fotos/9.jpg" style="height: 100%;" alt="Galeria 9" class="animate-on-scroll">
+                    </div>
+                </div>
+                <!-- Bloque 3: 2 columnas -->
+                <div class="gallery-wrapper ">
+                    <img src="v3.webp" alt="Decoración" class="gallery-corner gallery-top-left">
+                    <img src="v4.webp" alt="Decoración" class="gallery-corner gallery-top-right">
+                    <div class="grid-gallery grid-2-cols">
+                        <img src="fotos/5.jpg" alt="Galeria 5" class="animate-slide-in-left">
+                        <img src="fotos/6.jpg" alt="Galeria 6" class="animate-slide-in-right">
+                        <img src="fotos/7.jpg" alt="Galeria 7" class="animate-slide-in-left">
+                        <img src="fotos/8.jpg" alt="Galeria 8" class="animate-slide-in-right">
+                    </div>
+                </div>
+            </section>
+            
             <!-- Flores decorativas laterales -->
             <div class="side-flower-container">
                 <img src="flor2.png" alt="Decoración floral" class="animate-slide-in-left" style="width: 70px;">
